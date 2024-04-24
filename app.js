@@ -1,0 +1,30 @@
+const express = require('express')
+const index = require('./routes/index')
+const user = require('./routes/user')
+const dashboard = require('./routes/dashboard')
+const guru = require('./routes/guru')
+const karyawan = require('./routes/karyawan')
+const kelas = require('./routes/kelas')
+const matkul = require('./routes/matkul')
+const nilai = require('./routes/nilai')
+const pembayaran = require('./routes/pembayaran')
+const siswa = require('./routes/siswa')
+
+const app = express()
+
+app.use(express.json())
+
+app.use(index)
+app.use(user)
+app.use(dashboard)
+app.use(guru)
+app.use(karyawan)
+app.use(kelas)
+app.use(matkul)
+app.use(nilai)
+app.use(pembayaran)
+app.use(siswa)
+
+app.listen(3000, () => {
+    console.log('Server is running in port 3000')
+})
